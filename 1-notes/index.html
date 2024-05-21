@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Notes</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    #note {
+      padding-left: 8px;
+      padding-right: 8px;
+      padding-top: 8px;
+      padding-bottom: 8px;
+      border-radius: 8px;
+    }
+    #submit {
+      padding-left: 18px;
+      padding-right: 18px;
+      padding-top: 12px;
+      padding-bottom: 12px;
+      border-radius: 8px;
+      border: none;
+      background-color: dodgerblue;
+      color: white;
+      /* buat kesan seperti tombol yg bisa ditekan */
+      cursor: pointer;
+    }
+    /* ganti warna tombol jadi lebih gelap */
+    #submit:hover {
+      background-color: blue;
+    }
+  </style>
+</head>
+<body>
+  <div>
+    <h1>My Notes</h1>
+  </div>
+  <div>
+    <form id="note-form" action="">
+      <input type="text" id="note" />
+      <input type="submit" id="submit" name="Submit" />
+    </form>
+  </div>
+  <div>
+    <ul id="notes">
+      
+    </ul>
+  </div>
+
+  <script>
+    // buat penunjuk form
+    var noteForm = document.getElementById('note-form');
+
+    // tambah event "submit" ke form
+    noteForm.addEventListener('submit', function(event) {
+      // cegah form me-reload
+      event.preventDefault();
+
+      var note = document.getElementById('note');
+      // get nilai input note
+      var noteValue = note.value;
+
+      var notes = document.getElementById('notes');
+      // tambahkan nilai note ke html
+      notes.insertAdjacentHTML('beforeend', `
+        <li>${noteValue}</li>
+      `);
+
+      // reset input note
+      note.value = '';
+    });
+  </script>
+</body>
+</html>
