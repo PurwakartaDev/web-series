@@ -36,22 +36,18 @@
   <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 
   <script>
-    // buat penunjuk form
-    var noteForm = $('#note-form');
     var number = 1;
 
     // tambah event "submit" ke form
-    noteForm.on('submit', function(event) {
+    $('#note-form').on('submit', function(event) {
       // cegah form me-reload
       event.preventDefault();
 
-      var note = $('#note');
       // get nilai input note
-      var noteValue = note.val();
+      var noteValue = $('#note').val();
 
-      var notes = $('#notes');
       // tambahkan nilai note ke html
-      notes.append(`
+      $('#notes').append(`
         <div class="col-12 col-md-4 col-lg-3 mb-4">
           <div class="card">
             <div class="card-body text-start">
@@ -64,7 +60,7 @@
       number++;
 
       // reset input note
-      note.val('');
+      $('#note').val('');
     });
   </script>
 </body>
