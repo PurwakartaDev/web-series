@@ -1,3 +1,5 @@
+<img src="assets/logo_pwk_dev_transparent.png.webp" alt="Logo PurwakartaDev" title="Logo PurwakartaDev" height="250">
+
 # Web Series
 
 Source code untuk workshop offline dan online Web Series yang diselenggarakan oleh [PurwakartaDev](https://purwakartadev.github.io/).
